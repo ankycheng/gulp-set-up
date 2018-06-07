@@ -98,11 +98,22 @@ gulp.task('browser-sync',function () {
     });
 });
 
+gulp.task('image-min', () =>
+    gulp.src('./source/images/*')
+    .pipe($.if(options.env === 'production', $.imagemin()))
+    .pipe(gulp.dest('./public/images'))
+);
+
 gulp.task('watch', function () {
     gulp.watch('./source/sass/**/*.scss', ['sass']);
     gulp.watch('./source/*.jade', ['jade']);
     gulp.watch('./source/js/**/*.js', ['babel']);
 });
 
-gulp.task('sequence', gulpSequence('clean', 'jade', 'sass', 'babel', 'vendorJs'));
-gulp.task('default', ['jade', 'sass', 'babel', 'vendorJs', 'browser-sync','watch']);
+gulp.task('deploy', function () {
+    return gulp.src('./public/**/*')
+        .pipe($.ghPages());
+});
+
+gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'vendorJs'));
+gulp.task('default', ['jade', 'sass', 'babel', 'vendorJs', 'browser-sync','image-min', 'watch']);rr

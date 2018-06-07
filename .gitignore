@@ -1,6 +1,7 @@
-node_modules
-bower_components
 .vscode
 .tmp
 .git
 package-lock.json
+node_modules
+bower_components
+public

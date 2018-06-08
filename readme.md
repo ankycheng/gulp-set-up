@@ -46,10 +46,11 @@ gulp-minify-css : 壓縮css，不再支援，使用 gulp-clean-css
 gulp-plumber : 編譯出錯時 gulp 不停止
 gulp-postcss : 根據版本編譯 css
 gulp-sass : 編譯sass/scss
-gulp-sequence : 
-gulp-sourcemaps : 
+gulp-sequence : 依序執行 gulp 指令
+gulp-sourcemaps : 提示執行檔的原始檔案出處（在concat或是uglify之後）
 gulp-uglify : 壓縮 js 檔
-main-bower-files : 
-minimist : 
+main-bower-files : bower 相關套件
+minimist : 處理執行參數
 
 Ref: <https://css-tricks.com/gulp-for-beginners/>
+

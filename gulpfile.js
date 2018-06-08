@@ -29,7 +29,7 @@ gulp.task('copyHTML', function () {
 gulp.task('jade', function () {
     // var YOUR_LOCALS = {};
 
-    gulp.src('./source/*.jade')
+    gulp.src('./source/jade/*.jade')
         .pipe($.plumber())
         .pipe($.jade({
             pretty: true
@@ -45,7 +45,7 @@ gulp.task('sass', function () {
             browsers: ['last 3 version', '>5%']
         })
     ];
-    return gulp.src('./source/sass/**/*.scss')
+    return gulp.src('./source/sass/**/*.sass')
         .pipe($.plumber())
         .pipe($.sourcemaps.init())
         .pipe($.sass().on('error', $.sass.logError))
@@ -116,4 +116,4 @@ gulp.task('deploy', function () {
 });
 
 gulp.task('build', gulpSequence('clean', 'jade', 'sass', 'babel', 'vendorJs'));
-gulp.task('default', ['jade', 'sass', 'babel', 'vendorJs', 'browser-sync','image-min', 'watch']);rr
+gulp.task('default', ['jade', 'sass', 'babel', 'vendorJs', 'browser-sync','image-min', 'watch']);

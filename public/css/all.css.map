@@ -1,1 +1,1 @@
-{"version":3,"sources":["all.scss"],"names":[],"mappings":"AAEA;EACI,WAHgB,EAInB;;AAED;EACI,kCAAyB;MAAzB,8BAAyB;UAAzB,0BAAyB;EACzB,0BAAiB;UAAjB,kBAAiB,EACpB","file":"all.css","sourcesContent":["$primary-color : red;\n\nbody{\n    color: $primary-color;\n}\n\n.card{\n    transform: rotate(120deg);\n    filter: blur(3px);\n}\n"]}
+{"version":3,"sources":["all.sass"],"names":[],"mappings":"AAAA;EACI,aAAY,EAAG","file":"all.css","sourcesContent":["html,body {\n    color: green; }\n"]}
